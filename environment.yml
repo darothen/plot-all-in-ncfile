@@ -1,0 +1,10 @@
+name: plot-all-in-ncfile
+channels:
+  - ioos
+dependencies:
+  - cartopy
+  - matplotlib
+  - netcdf4
+  - pandas
+  - python=3.4
+  - xray
