@@ -37,5 +37,9 @@ Other options might be to convert these to JSON or YAML and save them on disk in
 $ ./plot-all-in-ncfile.py TRMM_3B42.1998-2013.daily.1deg.V7.nc -c TRMM_3B42.1998-2013.daily.1deg.V7.cf --sample
 ```
 
+This should produce the output image
+
+![rr_01011998_1200Z.png](TRMM Rainfall, 01-01-1998 12Z)
+
 [cartopy]: http://scitools.org.uk/cartopy/
 [xray]: http://xray.readthedocs.org
