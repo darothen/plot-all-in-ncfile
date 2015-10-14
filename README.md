@@ -11,7 +11,7 @@ $ source activate plot-all-in-ncfile
 You may want to install the bleeding-edge release of [xray][],
 
 ```bash
-$ git install git+https://github.com/xray/xray.git
+$ pip install git+https://github.com/xray/xray.git
 ```
 
 From there, just run the script with the "-h" flag for help/usage. A very simple scheme is used to save color formatting between plots. The script has the to read a "colorfile", which is really just a glorified dictionary of dictionaries which has been saved (pickled) to disk. I patched in to use [xray][]'s tool to automatically infer colormap settings, and if this "colorfile" isn't supplied as an argument, it'll automatically look at all the data for each variable and figure out the best colormap settings and save them in a file with the same basename as the netCDF file being plotted but with the extension `.cf`. Furthermore, if you supply a colorfile but it doesn't contain details for a variable found in the netCDF file, it will automatically infer it and add it to the colorfile.
