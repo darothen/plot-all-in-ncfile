@@ -111,8 +111,10 @@ if __name__ == "__main__":
 
     #######################################################
 
+    print(dataset)
+
     for v in dataset.variables:
-        if v in dataset.dims: continue
+        if (v in dataset.dims) or (v in dataset.coords): continue
 
         print("\nPlotting data for variable '%s'..." % v)
         # print("Loading....", flush=True)
@@ -128,6 +130,7 @@ if __name__ == "__main__":
 
         # Iterate over time dimension
         for time, plot_data in var_data.groupby('time'):
+
             ts = pd.to_datetime(str(time), utc=True)
             # detail format - MM-DD-YYYY_hh:mmZ"
             ts_str = ts.strftime('%m-%d-%Y %H:%MZ')
@@ -135,7 +138,6 @@ if __name__ == "__main__":
             fn_ts_str = ts.strftime("%m%d%Y_%H%MZ")
 
             print("   " + ts_str)
-
 
             # Check if darray needs a cyclic point added
             if not check_cyclic(plot_data, coord='lon'):
