@@ -1,6 +1,6 @@
 `plot-all-in-ncfile.py` example script.
 
-For convenience, a conda environment has been provided with all the packages used to automate this task. The install process is very straightforward (and unnecessary if you already have a scientific Python setup running with the packages [xray][] and [cartopy][]):
+For convenience, a conda environment has been provided with all the packages used to automate this task. The install process is very straightforward (and unnecessary if you already have a scientific Python setup running with the packages [xarray][] and [cartopy][]):
 
 ```bash
 $ cd path/to/plot-all-in-ncfile.py
@@ -11,10 +11,10 @@ $ source activate plot-all-in-ncfile
 You may want to install the bleeding-edge release of [xray][],
 
 ```bash
-$ pip install git+https://github.com/xray/xray.git
+$ pip install git+https://github.com/pydata/xarray.git
 ```
 
-From there, just run the script with the "-h" flag for help/usage. A very simple scheme is used to save color formatting between plots. The script has the to read a "colorfile", which is really just a glorified dictionary of dictionaries which has been saved (pickled) to disk. I patched in to use [xray][]'s tool to automatically infer colormap settings, and if this "colorfile" isn't supplied as an argument, it'll automatically look at all the data for each variable and figure out the best colormap settings and save them in a file with the same basename as the netCDF file being plotted but with the extension `.cf`. Furthermore, if you supply a colorfile but it doesn't contain details for a variable found in the netCDF file, it will automatically infer it and add it to the colorfile.
+From there, just run the script with the "-h" flag for help/usage. A very simple scheme is used to save color formatting between plots. The script has the to read a "colorfile", which is really just a glorified dictionary of dictionaries which has been saved (pickled) to disk. I patched in to use [arxray][]'s tool to automatically infer colormap settings, and if this "colorfile" isn't supplied as an argument, it'll automatically look at all the data for each variable and figure out the best colormap settings and save them in a file with the same basename as the netCDF file being plotted but with the extension `.cf`. Furthermore, if you supply a colorfile but it doesn't contain details for a variable found in the netCDF file, it will automatically infer it and add it to the colorfile.
 
 Since a colorfile is just a dictionary of dicts, you can easily add to it interactively (or maybe with a special function that automates the task). Here's the dictionary contained in the colorfile generated when looking at some TRMM data:
 
@@ -43,4 +43,4 @@ This should produce the output image
 (rr_01011998_1200Z.png)
 
 [cartopy]: http://scitools.org.uk/cartopy/
-[xray]: http://xray.readthedocs.org
+[xarray]: http://xarray.readthedocs.io/en/latest/

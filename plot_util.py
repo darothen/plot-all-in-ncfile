@@ -12,8 +12,8 @@ import matplotlib.ticker as mticker
 
 import numpy as np
 
-import xray
-from xray.plot.utils import _determine_cmap_params
+import xarray
+from xarray.plot.utils import _determine_cmap_params
 
 import warnings
 

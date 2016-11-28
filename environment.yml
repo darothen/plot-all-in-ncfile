@@ -7,4 +7,4 @@ dependencies:
   - netcdf4
   - pandas
   - python=3.4
-  - xray
+  - xarray

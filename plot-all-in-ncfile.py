@@ -4,7 +4,7 @@ plot_ncfile.py - For each (or given) variables in a netCDF file,
 plot each timestamp.
 
 Author: Daniel Rothenberg <darothen@mit.edu>
-Date: October 5, 2015
+Date: November 28, 2016
 
 """
 
@@ -21,8 +21,8 @@ plt.ioff() # turn off interactive plotting for expediency
 
 import pandas as pd
 
-import xray
-from xray.plot.utils import _determine_cmap_params
+import xarray
+from xarray.plot.utils import _determine_cmap_params
 
 from plot_util import *
 
